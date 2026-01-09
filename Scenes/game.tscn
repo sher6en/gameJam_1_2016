@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://elst0xn32iil"]
+[gd_scene load_steps=11 format=3 uid="uid://elst0xn32iil"]
 
-[ext_resource type="PackedScene" uid="uid://bo0pwsa6hw5ue" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://bo0pwsa6hw5ue" path="res://Scenes/ort.tscn" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://buxnjkeobrpkd" path="res://Scenes/main_character.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://cew0nr3cc7u8v" path="res://Scenes/target.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://t6lgkcdvwbf8" path="res://Scenes/supp.tscn" id="4_wowpa"]
+[ext_resource type="Script" uid="uid://c22r8jreyqqf0" path="res://Scenes/supp.gd" id="5_i6g32"]
+[ext_resource type="Texture2D" uid="uid://dcssemjsdsyre" path="res://Assets/void/void.png" id="6_i6g32"]
 
 [sub_resource type="GDScript" id="GDScript_wrm1d"]
 script/source = "extends Camera2D
@@ -48,3 +52,15 @@ format = 2
 layer_0/tile_data = PackedInt32Array(65535, 0, 0, -1, 0, 0, 0, 0, 0, -65536, 0, 2, 65534, 0, 0, -2, 65536, 1, -3, 65536, 0, 65533, 0, 0, 131069, 65536, 1, 131070, 0, 2, 131071, 0, 2, 65536, 0, 2, 65537, 0, 1, -131072, 0, 2, -65537, 0, 2, -65538, 0, 2, -65539, 0, 2, -65540, 0, 2, -131076, 65536, 0, -131075, 65536, 1, -131074, 0, 2, -196609, 65536, 0, -262144, 0, 2, -262143, 0, 2, -196606, 65536, 1, -196608, 0, 2, -131073, 0, 2, -196610, 0, 2, -5, 65536, 1, 131067, 0, 0, 131068, 0, 0, 2, 0, 0, 196606, 0, 1, 196607, 0, 1, 131072, 0, 1, 65538, 0, 1, 65539, 0, 1, 131075, 0, 1, 131076, 0, 1, -196604, 65536, 0, -131068, 65536, 0, -131067, 65536, 0, -65531, 65536, 0, 196605, 0, 2, 196604, 0, 2, 131074, 0, 2, 131073, 0, 2, 65541, 0, 2, 5, 0, 2, 4, 0, 2, 65540, 0, 2, 3, 65536, 0, -65532, 0, 2, -65534, 0, 2, -131070, 0, 2, -262140, 0, 2, -262141, 0, 2, -262142, 0, 2, -196611, 0, 2, -196612, 65536, 1, -131077, 0, 2, -65541, 0, 2, -4, 0, 2, 65532, 0, 2, 65531, 0, 2, 1, 0, 2, -65535, 0, 2, -131071, 0, 2, -196607, 0, 2, -196605, 0, 2, -131069, 0, 2, -65533, 0, 2, -196603, 0, 2)
 
 [node name="mainCharacter" parent="." instance=ExtResource("2_qxrlw")]
+
+[node name="target" parent="." instance=ExtResource("3_wrm1d")]
+position = Vector2(-7.999999, 39.999996)
+
+[node name="supp" parent="." instance=ExtResource("4_wowpa")]
+z_index = 12
+position = Vector2(-12, 6)
+script = ExtResource("5_i6g32")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -4096
+texture = ExtResource("6_i6g32")

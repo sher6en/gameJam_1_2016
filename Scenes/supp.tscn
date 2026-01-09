@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://t6lgkcdvwbf8"]
+
+[ext_resource type="Texture2D" uid="uid://duf601dgvrbwi" path="res://Assets/sup/animation_sheet.png" id="1_iait4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uv81o"]
+atlas = ExtResource("1_iait4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxhym"]
+atlas = ExtResource("1_iait4")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iait4"]
+atlas = ExtResource("1_iait4")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdbte"]
+atlas = ExtResource("1_iait4")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8evs0"]
+atlas = ExtResource("1_iait4")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y2x0"]
+atlas = ExtResource("1_iait4")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyvi5"]
+atlas = ExtResource("1_iait4")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o7in"]
+atlas = ExtResource("1_iait4")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdbte"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uv81o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxhym")
+}],
+"loop": true,
+"name": &"down",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iait4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdbte")
+}],
+"loop": true,
+"name": &"left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8evs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y2x0")
+}],
+"loop": true,
+"name": &"right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyvi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o7in")
+}],
+"loop": true,
+"name": &"up",
+"speed": 3.0
+}]
+
+[node name="sup" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bdbte")
+animation = &"down"
+autoplay = "down"

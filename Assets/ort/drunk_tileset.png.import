@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ygf7myggfvc"
-path="res://.godot/imported/familiar_270_leech.png-1cb7b357c2ff31a5cd8ad198b89d2d71.ctex"
+uid="uid://dohw7f10k0ksa"
+path="res://.godot/imported/drunk_tileset.png-ab156ae60f02677df22ff02379f8ac76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/familiar_270_leech.png"
-dest_files=["res://.godot/imported/familiar_270_leech.png-1cb7b357c2ff31a5cd8ad198b89d2d71.ctex"]
+source_file="res://Assets/ort/drunk_tileset.png"
+dest_files=["res://.godot/imported/drunk_tileset.png-ab156ae60f02677df22ff02379f8ac76.ctex"]
 
 [params]
 
