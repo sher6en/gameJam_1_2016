@@ -1,7 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://elst0xn32iil"]
+[gd_scene load_steps=15 format=3 uid="uid://elst0xn32iil"]
 
 [ext_resource type="PackedScene" uid="uid://bo0pwsa6hw5ue" path="res://Scenes/ort.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://ixdniw8wkvla" path="res://Assets/lvl1/Tileset_borderless.png" id="2_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://buxnjkeobrpkd" path="res://Scenes/main_character.tscn" id="2_qxrlw"]
+[ext_resource type="Script" uid="uid://coauvmqyi5qlg" path="res://Scenes/ort.gd" id="3_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://cew0nr3cc7u8v" path="res://Scenes/target.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://t6lgkcdvwbf8" path="res://Scenes/supp.tscn" id="4_wowpa"]
 [ext_resource type="Script" uid="uid://c22r8jreyqqf0" path="res://Scenes/supp.gd" id="5_i6g32"]
@@ -22,6 +24,17 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldgsr"]
+texture = ExtResource("2_h4fw4")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wowpa"]
+sources/1 = SubResource("TileSetAtlasSource_ldgsr")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4fw4"]
 texture = ExtResource("8_v158k")
 0:0/size_in_atlas = Vector2i(1, 4)
@@ -35,6 +48,7 @@ texture = ExtResource("8_v158k")
 2:0/size_in_atlas = Vector2i(1, 4)
 2:0/0 = 0
 2:0/0/texture_origin = Vector2i(0, -24)
+2:0/0/probability = 0.25
 3:0/size_in_atlas = Vector2i(1, 4)
 3:0/0 = 0
 3:0/0/texture_origin = Vector2i(0, -24)
@@ -43,52 +57,38 @@ texture = ExtResource("8_v158k")
 [sub_resource type="TileSet" id="TileSet_ldgsr"]
 sources/0 = SubResource("TileSetAtlasSource_h4fw4")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ldgsr"]
-texture = ExtResource("2_h4fw4")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-0:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_wowpa"]
-sources/1 = SubResource("TileSetAtlasSource_ldgsr")
-
 [node name="Game" type="Node2D"]
 position = Vector2(1, 0)
 
-[node name="ort" parent="." instance=ExtResource("1_ebmjs")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_ebmjs")]
 z_index = 6
-position = Vector2(99, 63)
+position = Vector2(1, -15)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(143, 81)
 zoom = Vector2(4, 4)
 script = SubResource("GDScript_wrm1d")
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_wowpa")
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 1, 0, -1, 1, 0, 0, 196609, 0, -65536, 1, 0, 65534, 1, 0, -2, 1, 0, -3, 1, 0, 65533, 1, 1, 131069, 65537, 1610612736, 131070, 196609, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 1, -131072, 1, 0, -65537, 1, 0, -65538, 196609, 0, -65539, 1, 0, -65540, 65537, 0, -131076, 196609, 0, -131075, 1, 0, -131074, 1, 1, -196609, 1, 0, -262144, 196609, 0, -262143, 1, 0, -196606, 65537, 1610612736, -196608, 1, 0, -131073, 196609, 0, -196610, 65537, 1610612736, -5, 1, 0, 131067, 1, 0, 131068, 1, 1, 2, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 65538, 65537, 1610612736, 65539, 1, 1, 131075, 1, 0, 131076, 65537, 1610612736, -196604, 196609, 0, -131068, 1, 0, -131067, 1, 0, -65531, 196609, 0, 196605, 65537, 1610612736, 196604, 1, 0, 131074, 1, 0, 131073, 1, 1, 65541, 1, 0, 5, 1, 0, 4, 196609, 0, 65540, 1, 1, 3, 65537, 1610612736, -65532, 1, 0, -65534, 1, 1, -131070, 1, 0, -262140, 1, 0, -262141, 1, 0, -262142, 1, 0, -196611, 1, 0, -196612, 1, 0, -131077, 1, 0, -65541, 65537, 1610612736, -4, 1, 1, 65532, 1, 0, 65531, 65537, 1610612736, 1, 1, 0, -65535, 196609, 0, -131071, 1, 0, -196607, 1, 0, -196605, 1, 1, -131069, 1, 0, -65533, 1, 0, -196603, 65537, 1610612736)
+
+[node name="ort" parent="." instance=ExtResource("2_qxrlw")]
+script = ExtResource("3_1l0tm")
+
 [node name="target" parent="." instance=ExtResource("3_wrm1d")]
-position = Vector2(151, 136)
+position = Vector2(-7.999999, 39.999996)
 
 [node name="supp" parent="." instance=ExtResource("4_wowpa")]
 z_index = 12
-position = Vector2(131, 116)
+position = Vector2(-12, 6)
 script = ExtResource("5_i6g32")
 
-[node name="void" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -4096
-position = Vector2(143, 80)
 texture = ExtResource("6_i6g32")
 
 [node name="wall" type="TileMap" parent="."]
-z_index = -4095
-position = Vector2(143, 96)
 tile_set = SubResource("TileSet_ldgsr")
 format = 2
 layer_0/tile_data = PackedInt32Array(262140, 0, 0, 262141, 65536, 0, 262142, 131072, 0, 262143, 0, 0, 196608, 65536, 0, 196609, 131072, 0, 196610, 0, 0, 196611, 65536, 0, 196612, 131072, 0, 131077, 65536, 0, 196603, 131072, 0)
-
-[node name="floor" type="TileMap" parent="."]
-z_index = -4095
-position = Vector2(143, 96)
-tile_set = SubResource("TileSet_wowpa")
-format = 2
-layer_0/tile_data = PackedInt32Array(65535, 1, 0, -1, 1, 0, 0, 196609, 0, -65536, 196609, 0, 65534, 1, 0, -2, 1, 0, -3, 1, 0, 65533, 1, 1, 131069, 65537, 1610612736, 131070, 196609, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, -131072, 1, 0, -65537, 1, 0, -65538, 196609, 0, -65539, 1, 0, -65540, 65537, 0, -131076, 196609, 0, -131075, 1, 0, -131074, 1, 1, -196609, 1, 0, -262144, 196609, 0, -262143, 1, 0, -196606, 65537, 1610612736, -196608, 1, 0, -131073, 196609, 0, -196610, 65537, 1610612736, -5, 1, 0, 131067, 1, 0, 131068, 1, 1, 2, 196609, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 65538, 196609, 0, 65539, 1, 0, 131075, 1, 0, 131076, 65537, 1610612736, -196604, 196609, 0, -131068, 1, 0, -131067, 1, 0, -65531, 196609, 0, 196605, 65537, 1610612736, 196604, 1, 0, 131074, 1, 0, 131073, 1, 1, 65541, 1, 0, 5, 1, 0, 4, 196609, 0, 65540, 196609, 0, 3, 65537, 1610612736, -65532, 1, 0, -65534, 1, 1, -131070, 1, 0, -262140, 1, 0, -262141, 1, 0, -262142, 1, 0, -196611, 1, 0, -196612, 1, 0, -131077, 1, 0, -65541, 65537, 1610612736, -4, 1, 1, 65532, 1, 0, 65531, 65537, 1610612736, 1, 1, 0, -65535, 196609, 0, -131071, 1, 0, -196607, 1, 0, -196605, 1, 1, -131069, 1, 0, -65533, 1, 0, -196603, 65537, 1610612736)

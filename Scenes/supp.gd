@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	var direction_y := Input.get_axis("ui_up", "ui_down")
-	print("x = ", direction_x, "y = ", direction_y)	
+	print("x = ", direction_x, " y = ", direction_y)	
 	if direction_y==-1:
 		$AnimatedSprite2D.play("up")
 		velocity.y = direction_y * SPEED
