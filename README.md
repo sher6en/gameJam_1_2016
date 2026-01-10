@@ -3,7 +3,7 @@ To do list:
 - [ ] ort mechanics:
     - [ ] walking towards target
 - [ ] target system:
-    - [ ] collision detection
+    - [X] collision detection
     - [ ] falling animation
     - [ ] GOT
 - [ ] Battery system:
@@ -16,4 +16,4 @@ To do list:
     - [ ] ST
 - [ ] timer system:
     - [ ] display + countdown
-    - [ ] GOT
+    - [ ] Winning Happy
