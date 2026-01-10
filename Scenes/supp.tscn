@@ -85,7 +85,7 @@ animations = [{
 radius = 3.0
 height = 12.0
 
-[node name="sup" type="CharacterBody2D"]
+[node name="sup" type="CharacterBody2D" groups=["Supp"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bdbte")
