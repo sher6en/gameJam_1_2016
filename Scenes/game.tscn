@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bo0pwsa6hw5ue" path="res://Scenes/ort.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://b0xcfty654jms" path="res://Scipts/game.gd" id="1_v158k"]
 [ext_resource type="Texture2D" uid="uid://ixdniw8wkvla" path="res://Assets/lvl1/Tileset_borderless.png" id="2_h4fw4"]
-[ext_resource type="PackedScene" uid="uid://t6lgkcdvwbf8" path="res://Scenes/supp.tscn" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://bmgkeln7jwb8f" path="res://Scenes/supp.tscn" id="4_wowpa"]
 [ext_resource type="Script" uid="uid://cgu70o63vhryq" path="res://Scipts/supp.gd" id="5_i6g32"]
 [ext_resource type="Texture2D" uid="uid://dcssemjsdsyre" path="res://Assets/void/void.png" id="6_i6g32"]
 [ext_resource type="Texture2D" uid="uid://bwnph0fcojyo5" path="res://Assets/target/target1.png" id="8_h4fw4"]
@@ -94,7 +94,7 @@ tile_set = SubResource("TileSet_h4fw4")
 
 [node name="void" type="Sprite2D" parent="."]
 z_index = -4096
-position = Vector2(144, 80.5)
+position = Vector2(144, 80)
 texture = ExtResource("6_i6g32")
 
 [node name="battery" parent="." instance=ExtResource("9_h4fw4")]

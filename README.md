@@ -12,10 +12,10 @@ To do list:
     - [ ] health bar
     - [ ] battery spawning  
     - [ ] heath recovery on pickup
-- [ ] game over scene:
-    - [ ] static screen
-    - [ ] retry button
-    - [ ] Start again
+- [X] game over scene:
+    - [X] static screen
+    - [X] retry button
+    - [X] Start again
 
 
 - [ ] timer system:

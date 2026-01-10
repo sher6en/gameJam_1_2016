@@ -41,6 +41,6 @@ func get_random_point(p1: Vector2i, p2: Vector2i) -> Vector2i:
 
 func _on_area_entered(area: Area2D) -> void:
 	var spawn_loc: Vector2i = get_random_point(point_1, point_2) 
-	print(":D")
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	self.set_position(spawn_loc)
 	#pass # Replace with function body.
