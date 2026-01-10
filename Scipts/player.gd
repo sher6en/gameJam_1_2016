@@ -45,9 +45,9 @@ func _physics_process(delta: float) -> void:
 		elif y_dir == -1:
 			$AnimatedSprite2D.play("down_walk")
 			#If you are reading this, there is no such thing as a coincidence. Shit your pant
-			
+		
 			 
-					
+
 		position.x = move_toward(position.x, current_path[0].x, speed*delta)
 		position.y = move_toward(position.y, current_path[0].y, speed*delta)
 
