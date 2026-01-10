@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv4k6n3sk1g12"]
+
+[ext_resource type="Texture2D" uid="uid://4puv346t3gex" path="res://Assets/battery/animation_sheet.png" id="1_mjabg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23u8t"]
+atlas = ExtResource("1_mjabg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2pcn"]
+atlas = ExtResource("1_mjabg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iubcq"]
+atlas = ExtResource("1_mjabg")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stwts"]
+atlas = ExtResource("1_mjabg")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d4cn6"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_23u8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2pcn")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_iubcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stwts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="battery" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d4cn6")
+autoplay = "default"
+frame_progress = 0.8626206
