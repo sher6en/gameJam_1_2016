@@ -105,7 +105,7 @@ tile_set = SubResource("TileSet_h4fw4")
 
 [node name="void" type="Sprite2D" parent="."]
 z_index = -4096
-position = Vector2(144, 80.5)
+position = Vector2(144, 80)
 texture = ExtResource("6_i6g32")
 
 [node name="battery" parent="." instance=ExtResource("9_h4fw4")]
