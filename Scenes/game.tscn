@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://elst0xn32iil"]
+[gd_scene load_steps=17 format=4 uid="uid://elst0xn32iil"]
 
 [ext_resource type="PackedScene" uid="uid://bo0pwsa6hw5ue" path="res://Scenes/ort.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://b0xcfty654jms" path="res://Scipts/game.gd" id="1_v158k"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bv4k6n3sk1g12" path="res://Scenes/battery.tscn" id="9_h4fw4"]
 [ext_resource type="Texture2D" uid="uid://dxtvuhmgobtmu" path="res://Assets/bar/bar_under.png" id="10_o5yvi"]
 [ext_resource type="Texture2D" uid="uid://b64gn2fmnm8p3" path="res://Assets/bar/bar_segments.png" id="11_rku1e"]
+[ext_resource type="Script" uid="uid://n4cpa1w20w7k" path="res://Scipts/bar.gd" id="12_rku1e"]
 
 [sub_resource type="GDScript" id="GDScript_wrm1d"]
 script/source = "extends Camera2D
@@ -114,3 +115,4 @@ value = 7.0
 texture_under = ExtResource("10_o5yvi")
 texture_progress = ExtResource("11_rku1e")
 texture_progress_offset = Vector2(1, 0)
+script = ExtResource("12_rku1e")

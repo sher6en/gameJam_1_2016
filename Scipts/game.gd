@@ -4,6 +4,9 @@ extends Node2D
 static var point_1: Vector2i = Vector2i(64,32)
 static var point_2: Vector2i = Vector2i(239,143)
 
+const MAX_HEALTH := 80.0
+var health := 80.0
+
 # Called when the node enters the scene tree for the first time.
 @onready var target: Resource = preload("res://Scenes/target.tscn")
 
@@ -47,4 +50,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#self._ready()
-	pass
+	health = move_toward(health, 0, delta * 5)
