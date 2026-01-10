@@ -32,7 +32,7 @@ func get_random_point(p1: Vector2i, p2: Vector2i) -> Vector2i:
 	elif side == 4: 
 		random_point.y = p2.y/16
 		random_point.x = randi_range(p1.x+16, p2.x-16)/16
-	#print(random_point)
+	print(random_point)
 
 	random_point *= 16
 	random_point.x -= 1
