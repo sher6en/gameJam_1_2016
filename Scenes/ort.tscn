@@ -74,14 +74,14 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h4iuc"]
-radius = 7.071068
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nojrr"]
 particles_animation = true
 particles_anim_h_frames = 4
 particles_anim_v_frames = 1
 particles_anim_loop = false
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4iuc"]
+radius = 7.071068
 
 [node name="ort" type="CharacterBody2D" groups=["Ort"]]
 script = ExtResource("1_cvnsp")
@@ -92,10 +92,6 @@ sprite_frames = SubResource("SpriteFrames_7dp3o")
 animation = &"down_walk"
 autoplay = "down_walk"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_h4iuc")
-
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_nojrr")
 position = Vector2(0, -7)
@@ -105,3 +101,9 @@ emission_shape = 1
 emission_sphere_radius = 10.64
 gravity = Vector2(0, -20)
 anim_speed_max = 3.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_h4iuc")
