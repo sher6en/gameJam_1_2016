@@ -29,8 +29,9 @@ func _ready() -> void:
 	var target_instance: Node = target.instantiate()
 	add_child(target_instance)
 	
-	var spawn_loc: Vector2i = get_random_point(point_1, point_2) #Vector2i(63, 32) #get_random_point(point_1, point_2)
+	var spawn_loc: Vector2i = get_random_point(point_1, point_2) 
 	target_instance.set_position(spawn_loc)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
