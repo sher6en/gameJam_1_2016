@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED = 30.0
 
 @onready var current_target_position = Vector2i(0,0)
 var current_path = []
@@ -36,7 +36,21 @@ func _physics_process(delta: float) -> void:
 		var speed := SPEED
 		if position.x != current_path[0].x && position.y != current_path[0].y:
 			speed *= 0.707  # suspiciously close to 1 / sqrt(2)...
+		
+		var x_dir = sign(position.x-current_path[0].x)
+		var y_dir = sign(position.y-current_path[0].y)
+		if x_dir == 1:
+			$AnimatedSprite2D.play("left_walk")
+		elif x_dir == -1:
+			$AnimatedSprite2D.play("right_walk")
+		if y_dir == 1:
+			$AnimatedSprite2D.play("up_walk")
+		elif y_dir == -1:
+			$AnimatedSprite2D.play("down_walk")
 			
+			
+			 
+					
 		position.x = move_toward(position.x, current_path[0].x, speed*delta)
 		position.y = move_toward(position.y, current_path[0].y, speed*delta)
 
