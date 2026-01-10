@@ -54,7 +54,3 @@ func _physics_process(delta: float) -> void:
 		if position == Vector2(current_path[0]):
 
 			current_path.pop_front()
-
-
-	
-	#move_and_slide()

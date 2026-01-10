@@ -5,7 +5,7 @@ extends Area2D
 
 	
 func _ready():
-	position = 16 * Vector2i(randi_range(2, 13), randf_range(3, 7))
+	position = 16 * Vector2i(randi_range(5, 13), randf_range(3, 7))
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent().name == "supp":
