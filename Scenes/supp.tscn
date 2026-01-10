@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://t6lgkcdvwbf8"]
+[gd_scene load_steps=12 format=3 uid="uid://t6lgkcdvwbf8"]
 
 [ext_resource type="Texture2D" uid="uid://duf601dgvrbwi" path="res://Assets/sup/animation_sheet.png" id="1_iait4"]
 
@@ -81,9 +81,18 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7a4s1"]
+radius = 3.0
+height = 12.0
+
 [node name="sup" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bdbte")
 animation = &"down"
 autoplay = "down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7a4s1")
