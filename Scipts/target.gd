@@ -14,9 +14,7 @@ func _process(delta: float) -> void:
 	
 func get_random_point(p1: Vector2i, p2: Vector2i) -> Vector2i:
 	var return_value: Vector2i = Vector2i(0,0)
-	#var x_value: int = randi_range(p1.x, p2.x)/16	
-	#var y_value: int = randi_range(p1.y, p2.y)/16
-	#var random_point: Vector2i = Vector2i((x_value*16)-1, y_value*16)
+
 	var side: int = randi_range(1, 4)
 	#var rand_x: int
 	
@@ -34,19 +32,8 @@ func get_random_point(p1: Vector2i, p2: Vector2i) -> Vector2i:
 	elif side == 4: 
 		random_point.y = p2.y/16
 		random_point.x = randi_range(p1.x+16, p2.x-16)/16
-	print(random_point)
 	
-	#if random_point.x < 78 and random_point.y < 47:
-		#return_value = get_random_point(p1, p2)
-	#elif random_point.x < 78 and random_point.y > 127:
-		#return_value = get_random_point(p1, p2)
-	#elif random_point.x > 222 and random_point.y < 47:
-		#return_value = get_random_point(p1, p2)
-	#elif random_point.x > 222 and random_point.y > 127:
-		#return_value = get_random_point(p1, p2)
-	#else:
-		#return_value = (random_point)
-	#
+
 	random_point *= 16
 	random_point.x -= 1
 	return random_point  
