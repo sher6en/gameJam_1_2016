@@ -8,7 +8,7 @@ var current_path_idx = 0
 
 func _physics_process(delta: float) -> void:
 	
-	var target = get_parent().get_child(-1)
+	var target = get_parent().target_instance
 	if current_target_position != Vector2i(target.position+Vector2(1,0)): #A new target was created
 		current_target_position = Vector2i(target.position+Vector2(1,0))
 		current_path = []
