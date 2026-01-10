@@ -75,7 +75,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4iuc"]
-radius = 4.0
+radius = 7.071068
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nojrr"]
 particles_animation = true
@@ -93,7 +93,7 @@ animation = &"down_walk"
 autoplay = "down_walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_h4iuc")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
