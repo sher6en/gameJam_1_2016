@@ -10,11 +10,9 @@ func _physics_process(delta: float) -> void:
 	
 	var target = get_parent().get_child(-1)
 	if current_target_position != Vector2i(target.position+Vector2(1,0)): #A new target was created
-		print("Old target position ", current_target_position)
 		current_target_position = Vector2i(target.position+Vector2(1,0))
 		current_path = []
 		current_path_idx = 0
-		print("New target position ", current_target_position)
 		
 		var position_scaled16 = Vector2i(round(position/16))
 		var target_position_scaled16 = Vector2i(round(current_target_position/16))
@@ -47,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("up_walk")
 		elif y_dir == -1:
 			$AnimatedSprite2D.play("down_walk")
-			
+			#If you are reading this, there is no such thing as a coincidence. Shit your pant
 			
 			 
 					
@@ -55,9 +53,9 @@ func _physics_process(delta: float) -> void:
 		position.y = move_toward(position.y, current_path[0].y, speed*delta)
 
 		if position == Vector2(current_path[0]):
-			print("got to step, popping")
+
 			current_path.pop_front()
-			print("current path ", current_path)
+
 
 	
 	#move_and_slide()
