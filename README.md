@@ -1,7 +1,7 @@
 This is a game.
 To do list:
-- [ ] ort mechanics:
-    - [ ] walking towards target
+- [X] ort mechanics:
+    - [X] walking towards target
 - [ ] target system:
     - [X] collision detection
 	- [X] Target outline spawn 
