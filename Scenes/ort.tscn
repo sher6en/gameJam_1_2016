@@ -83,7 +83,7 @@ particles_anim_h_frames = 4
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[node name="ort" type="CharacterBody2D"]
+[node name="ort" type="CharacterBody2D" groups=["Ort"]]
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
