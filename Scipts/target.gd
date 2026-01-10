@@ -2,7 +2,7 @@ extends Area2D
 
 static var point_1: Vector2i = Vector2i(64,32)
 static var point_2: Vector2i = Vector2i(239,143)
-
+var outside: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,10 +12,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func get_random_point(p1: Vector2i, p2: Vector2i) -> Vector2i:
+func get_random_point(p1: Vector2i, p2: Vector2i, side) -> Vector2i:
 	var return_value: Vector2i = Vector2i(0,0)
 
-	var side: int = randi_range(1, 4)
+
 	#var rand_x: int
 	
 	var random_point = Vector2i.ZERO
@@ -40,7 +40,10 @@ func get_random_point(p1: Vector2i, p2: Vector2i) -> Vector2i:
 	
 
 func _on_area_entered(area: Area2D) -> void:
-	var spawn_loc: Vector2i = get_random_point(point_1, point_2) 
-	print(":D")
+	var random_num = randi_range(1, 4)
+	while(random_num == outside):
+		random_num = randi_range(1, 4)
+	outside = random_num
+	var spawn_loc: Vector2i = get_random_point(point_1, point_2, outside) 
 	self.set_position(spawn_loc)
 	#pass # Replace with function body.
