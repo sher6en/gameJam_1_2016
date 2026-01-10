@@ -4,6 +4,7 @@ To do list:
     - [ ] walking towards target
 - [ ] target system:
     - [X] collision detection
+	- [X] Target outline spawn 
     - [ ] falling animation
     - [ ] GOT
 - [ ] Battery system:
