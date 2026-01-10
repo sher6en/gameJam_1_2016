@@ -7,6 +7,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	self.value = int($"..".health / 10)
+	self.value = int(ceilf($"..".health / 10))
 	
 	

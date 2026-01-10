@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv4k6n3sk1g12"]
+[gd_scene load_steps=9 format=3 uid="uid://bv4k6n3sk1g12"]
 
+[ext_resource type="Script" uid="uid://jg804pm18mlh" path="res://Scipts/battery.gd" id="1_23u8t"]
 [ext_resource type="Texture2D" uid="uid://4puv346t3gex" path="res://Assets/battery/animation_sheet.png" id="1_mjabg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23u8t"]
@@ -38,9 +39,19 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="battery" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23u8t"]
+size = Vector2(6, 7)
+
+[node name="battery" type="Area2D" groups=["Battery"]]
+script = ExtResource("1_23u8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_d4cn6")
 autoplay = "default"
 frame_progress = 0.8626206
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_23u8t")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

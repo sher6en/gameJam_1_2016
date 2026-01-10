@@ -6,9 +6,12 @@ static var point_2: Vector2i = Vector2i(239,143)
 
 const MAX_HEALTH := 80.0
 var health := 80.0
+const MAX_BATTERY_SPAWN_TIMER = 10.0
+var battery_spawn_timer := 10.0
 
 # Called when the node enters the scene tree for the first time.
 @onready var target: Resource = preload("res://Scenes/target.tscn")
+@onready var battery: Resource = preload("res://Scenes/battery.tscn")
 
 func get_random_point(p1: Vector2i, p2: Vector2i) -> Vector2i:
 	var return_value: Vector2i = Vector2i(0,0)
@@ -51,3 +54,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#self._ready()
 	health = move_toward(health, 0, delta * 5)
+	battery_spawn_timer = move_toward(battery_spawn_timer, 0, delta)
+	if battery_spawn_timer == 0.0:
+		var battery_instance : Node = battery.instantiate()
+		add_child(battery_instance)
+		battery_spawn_timer = 10.0
