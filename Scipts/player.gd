@@ -11,7 +11,9 @@ func _physics_process(delta: float) -> void:
 	astar_grid.cell_size = Vector2(16,16)
 	astar_grid.update()
 	var path = astar_grid.get_id_path(Vector2i(position/16), Vector2i(target_position/16))
-	
+		
+	print("Ort pos: ", position, " target pos: ", target_position, " path: ", path)
+		
 	if len(path) > 0:
 		if Vector2i(position)==16*path[0]:
 			position.x = move_toward(position.x, 16*path[1].x, SPEED*delta)
