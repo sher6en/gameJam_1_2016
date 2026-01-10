@@ -1,5 +1,6 @@
 extends Node2D
 
+
 static var point_1: Vector2i = Vector2i(64,32)
 static var point_2: Vector2i = Vector2i(239,143)
 
@@ -31,7 +32,7 @@ func _ready() -> void:
 	
 	var spawn_loc: Vector2i = get_random_point(point_1, point_2) 
 	target_instance.set_position(spawn_loc)
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
