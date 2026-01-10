@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 	var direction_y := Input.get_axis("ui_up", "ui_down")
 	var direction_size = sqrt(pow(direction_x, 2)+pow(direction_y,2))
 	
+	
 	if direction_x==-1:
 		$AnimatedSprite2D.play("left")
 		velocity.x = direction_x * SPEED / direction_size

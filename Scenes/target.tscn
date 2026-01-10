@@ -28,7 +28,6 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="target" type="Area2D"]
-position = Vector2(8, 8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, 8)
