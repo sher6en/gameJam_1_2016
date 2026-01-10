@@ -4,6 +4,9 @@ extends Node2D
 static var point_1: Vector2i = Vector2i(64,32)
 static var point_2: Vector2i = Vector2i(239,143)
 
+const MAX_HEALTH := 80.0
+var health := 80.0
+
 # Called when the node enters the scene tree for the first time.
 @onready var target: Resource = preload("res://Scenes/target.tscn")
 
@@ -29,7 +32,7 @@ func get_random_point(p1: Vector2i, p2: Vector2i) -> Vector2i:
 	elif side == 4: 
 		random_point.y = p2.y/16
 		random_point.x = randi_range(p1.x+16, p2.x-16)/16
-	#print(random_point)
+	print(random_point)
 
 	random_point *= 16
 	random_point.x -= 1
@@ -47,4 +50,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#self._ready()
-	pass
+	health = move_toward(health, 0, delta * 5)
