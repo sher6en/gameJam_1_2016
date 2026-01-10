@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 10.0
 
-@onready var target_position = $"../target".position
+@onready var target_position = $"../supp".position
 
 func _physics_process(delta: float) -> void: 
 	var astar_grid = AStarGrid2D.new()
