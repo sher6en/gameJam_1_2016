@@ -1,9 +1,10 @@
 This is a game.
 To do list:
-- [ ] ort mechanics:
-    - [ ] walking towards target
+- [X] ort mechanics:
+    - [X] walking towards target
 - [ ] target system:
-    - [ ] collision detection
+    - [X] collision detection
+	- [X] Target outline spawn 
     - [ ] falling animation
     - [ ] GOT
 - [ ] Battery system:
@@ -16,4 +17,4 @@ To do list:
     - [ ] ST
 - [ ] timer system:
     - [ ] display + countdown
-    - [ ] GOT
+    - [ ] Winning Happy

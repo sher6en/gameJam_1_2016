@@ -81,7 +81,7 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h4iuc"]
-radius = 3.0
+radius = 7.071068
 
 [node name="ort" type="CharacterBody2D" groups=["Ort"]]
 script = ExtResource("1_cvnsp")
