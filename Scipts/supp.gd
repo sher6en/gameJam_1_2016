@@ -27,4 +27,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 		
+	var game := $".."
+	var max_speed = game.health / game.MAX_HEALTH * SPEED / direction_size
+	
+	velocity.x = clampf(velocity.x, -max_speed, max_speed)
+	velocity.y = clampf(velocity.y, -max_speed, max_speed)
+		
 	move_and_slide()
