@@ -33,7 +33,7 @@ func get_random_point(p1: Vector2i, p2: Vector2i, side) -> Vector2i:
 		random_point.y = p2.y/16
 		random_point.x = randi_range(p1.x+16, p2.x-16)/16
 	
-
+  
 	random_point *= 16
 	random_point.x -= 1
 	return random_point  
@@ -44,6 +44,6 @@ func _on_area_entered(area: Area2D) -> void:
 	while(random_num == outside):
 		random_num = randi_range(1, 4)
 	outside = random_num
-	var spawn_loc: Vector2i = get_random_point(point_1, point_2, outside) 
+	var spawn_loc: Vector2i = get_random_point(point_1, point_2, outside)
 	self.set_position(spawn_loc)
 	#pass # Replace with function body.
