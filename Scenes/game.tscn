@@ -1,14 +1,16 @@
-[gd_scene load_steps=14 format=4 uid="uid://elst0xn32iil"]
+[gd_scene load_steps=16 format=4 uid="uid://elst0xn32iil"]
 
 [ext_resource type="PackedScene" uid="uid://bo0pwsa6hw5ue" path="res://Scenes/ort.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://b0xcfty654jms" path="res://Scipts/game.gd" id="1_v158k"]
 [ext_resource type="Texture2D" uid="uid://ixdniw8wkvla" path="res://Assets/lvl1/Tileset_borderless.png" id="2_h4fw4"]
-[ext_resource type="PackedScene" uid="uid://bmgkeln7jwb8f" path="res://Scenes/supp.tscn" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://t6lgkcdvwbf8" path="res://Scenes/supp.tscn" id="4_wowpa"]
 [ext_resource type="Script" uid="uid://cgu70o63vhryq" path="res://Scipts/supp.gd" id="5_i6g32"]
 [ext_resource type="Texture2D" uid="uid://dcssemjsdsyre" path="res://Assets/void/void.png" id="6_i6g32"]
 [ext_resource type="Texture2D" uid="uid://bwnph0fcojyo5" path="res://Assets/target/target1.png" id="8_h4fw4"]
 [ext_resource type="Texture2D" uid="uid://8ofjjf57wlcg" path="res://Assets/lvl1/wall_tileset.png" id="8_v158k"]
 [ext_resource type="PackedScene" uid="uid://bv4k6n3sk1g12" path="res://Scenes/battery.tscn" id="9_h4fw4"]
+[ext_resource type="Texture2D" uid="uid://dxtvuhmgobtmu" path="res://Assets/bar/bar_under.png" id="10_o5yvi"]
+[ext_resource type="Texture2D" uid="uid://b64gn2fmnm8p3" path="res://Assets/bar/bar_segments.png" id="11_rku1e"]
 
 [sub_resource type="GDScript" id="GDScript_wrm1d"]
 script/source = "extends Camera2D
@@ -101,3 +103,14 @@ position = Vector2(93, 99)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-29, 32)
 texture = ExtResource("8_h4fw4")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 42.0
+max_value = 8.0
+value = 7.0
+texture_under = ExtResource("10_o5yvi")
+texture_progress = ExtResource("11_rku1e")
+texture_progress_offset = Vector2(1, 0)
