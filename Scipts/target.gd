@@ -36,12 +36,12 @@ func get_random_point(p1: Vector2i, p2: Vector2i, side) -> Vector2i:
   
 	random_point *= 16
 	random_point.x -= 1
-	return random_point  
-	
+	return random_point  	
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent().name == "ort":
 		print("ort touch target")
+		
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 	var random_num = randi_range(1, 4)
 	while(random_num == outside):

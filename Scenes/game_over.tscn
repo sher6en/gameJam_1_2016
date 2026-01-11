@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://mo3ia0fastqb"]
+[gd_scene load_steps=6 format=3 uid="uid://mo3ia0fastqb"]
 
 [ext_resource type="Texture2D" uid="uid://dwsc80rg5xgmw" path="res://Assets/void/game_over_background.png" id="1_ojehl"]
 [ext_resource type="Script" uid="uid://d2k20f6dbtcgp" path="res://Scenes/retry_button.gd" id="2_ek8ke"]
 [ext_resource type="Texture2D" uid="uid://b6nrnosfslht2" path="res://Assets/void/retry_button.png" id="3_eoghk"]
+[ext_resource type="AudioStream" uid="uid://buvhrymtkyeey" path="res://SFX/death sfx.mp3" id="4_eoghk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14u15"]
 size = Vector2(16, 16)
@@ -24,3 +25,7 @@ script = ExtResource("2_ek8ke")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 texture = ExtResource("3_eoghk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_eoghk")
+autoplay = true

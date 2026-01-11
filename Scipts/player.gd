@@ -33,7 +33,8 @@ func _physics_process(delta: float) -> void:
 		var speed := SPEED
 		if position.x != current_path[0].x && position.y != current_path[0].y:
 			speed *= 0.707  # suspiciously close to 1 / sqrt(2)...
-		
+		#If you are reading this, there is no such thing as a coincidence. Shit your pant
+
 		var x_dir = sign(position.x-current_path[0].x)
 		var y_dir = sign(position.y-current_path[0].y)
 		if x_dir == 1:
@@ -44,7 +45,7 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("up_walk")
 		elif y_dir == -1:
 			$AnimatedSprite2D.play("down_walk")
-			#If you are reading this, there is no such thing as a coincidence. Shit your pant
+
 		
 			 
 
