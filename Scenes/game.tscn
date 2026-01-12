@@ -82,11 +82,11 @@ script = SubResource("GDScript_wrm1d")
 
 [node name="ort" parent="." instance=ExtResource("1_ebmjs")]
 z_index = 6
-position = Vector2(193, 78)
+position = Vector2(156, 84)
 
 [node name="supp" parent="." instance=ExtResource("4_wowpa")]
 z_index = 12
-position = Vector2(131, 116)
+position = Vector2(131, 88)
 script = ExtResource("5_i6g32")
 
 [node name="terrain" type="TileMapLayer" parent="."]
