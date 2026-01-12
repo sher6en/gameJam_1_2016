@@ -8,6 +8,9 @@ var current_side := randi_range(1, 4)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize_position()
+	modulate.r *= 1.3
+	modulate.g *= 1.1
+	modulate.b *= 1.1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -16,6 +19,7 @@ func _process(delta: float) -> void:
 	# this makes the target position less predictable, and supp has to always be
 	# around ort to guess where it's gonna be, matching closer the theme / story.
 	modulate.a = 3 - (position + Vector2(8, 8)).distance_to($"../ort".position) / 16.0
+
 	
 # generates a random integer point on the given side of a rectangle defined by 2 points
 func randomize_position() -> void:

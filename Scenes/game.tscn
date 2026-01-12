@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://elst0xn32iil"]
+[gd_scene load_steps=18 format=4 uid="uid://elst0xn32iil"]
 
 [ext_resource type="PackedScene" uid="uid://bo0pwsa6hw5ue" path="res://Scenes/ort.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://b0xcfty654jms" path="res://Scipts/game.gd" id="1_v158k"]
@@ -71,6 +71,11 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1l0tm")
 sources/1 = SubResource("TileSetAtlasSource_v158k")
 
+[sub_resource type="Environment" id="Environment_rku1e"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v158k")
 
@@ -117,3 +122,6 @@ script = ExtResource("12_rku1e")
 stream = ExtResource("3_rku1e")
 autoplay = true
 parameters/looping = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rku1e")

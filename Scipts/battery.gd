@@ -6,6 +6,9 @@ extends Area2D
 	
 func _ready():
 	position = 16 * Vector2i(randi_range(5, 13), randf_range(3, 7))
+	modulate.r *= 1.1
+	modulate.g *= 1.2
+	modulate.b *= 1.3
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent().name == "supp":
