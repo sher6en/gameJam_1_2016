@@ -2,7 +2,11 @@ extends CharacterBody2D
 
 const SPEED = 30.0
 
-@onready var current_target_position = Vector2i(0,0)
+# top left and bottom right corner positions in gridspace
+const map_min_pos := Vector2i(4, 2)
+const map_max_pos := Vector2i(14, 8)
+
+var current_target_position = Vector2i(0,0)
 var current_path = []
 var current_path_idx = 0
 
@@ -23,10 +27,9 @@ func _physics_process(delta: float) -> void:
 			current_path_block.x = move_toward(current_path_block.x, target_position_scaled16.x, 1)
 			current_path_block.y = move_toward(current_path_block.y, target_position_scaled16.y, 1)
 			var drunk_current_path_block = current_path_block + Vector2i(randi_range(-1, 1), randi_range(-1, 1))
-			drunk_current_path_block.x = clampi(drunk_current_path_block.x, 4, 14)
-			drunk_current_path_block.y = clampi(drunk_current_path_block.y, 2, 8)
-			current_path.push_back(16*drunk_current_path_block+Vector2i(8, 0))
-		current_path.push_back(current_target_position+Vector2i(8, 0))
+			drunk_current_path_block = drunk_current_path_block.clamp(map_min_pos, map_max_pos)
+			current_path.push_back(16 * drunk_current_path_block + Vector2i(8, 0))
+		current_path.push_back(current_target_position + Vector2i(8, 0))
 		
 		#print("target pos:", target.position, " curr_taget pos:", current_target_position, "\npath:", current_path)
 	

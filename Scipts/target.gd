@@ -1,7 +1,9 @@
 extends Area2D
 
-static var p1 := Vector2i(64,32)
-static var p2 := Vector2i(239,143)
+# top left and bottom right corner positions in gridspace
+const map_min_pos := Vector2i(4, 2)
+const map_max_pos := Vector2i(14, 8)
+
 var current_side := randi_range(1, 4)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,24 +28,20 @@ func randomize_position() -> void:
 	var random_point := Vector2i.ZERO
 	
 	if side == 1:
-		random_point.x = p1.x
-		random_point.y = randi_range(p1.y+16, p2.y-16)
+		random_point.x = map_min_pos.x
+		random_point.y = randi_range(map_min_pos.y + 1, map_max_pos.y - 1)
 	elif side == 2:
-		random_point.x = p2.x
-		random_point.y = randi_range(p1.y+16, p2.y-16)
+		random_point.x = map_max_pos.x
+		random_point.y = randi_range(map_min_pos.y + 1, map_max_pos.y - 1)
 	elif side == 3:
-		random_point.y = p1.y
-		random_point.x = randi_range(p1.x+16, p2.x-16)
+		random_point.y = map_min_pos.y
+		random_point.x = randi_range(map_min_pos.x + 1, map_max_pos.x - 1)
 	elif side == 4: 
-		random_point.y = p2.y
-		random_point.x = randi_range(p1.x+16, p2.x-16)
+		random_point.y = map_max_pos.y
+		random_point.x = randi_range(map_min_pos.x + 1, map_max_pos.x - 1)
 
-	# snap to multiples of 16 using integer division
-	random_point /= 16
+	# convert from gridspace to worldspace 
 	random_point *= 16
-	
-	print(random_point)
-	
 	random_point.x -= 1
 	position = random_point  
 

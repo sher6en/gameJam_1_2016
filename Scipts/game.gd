@@ -2,8 +2,9 @@ extends Node2D
 
 
 const MAX_HEALTH := 80.0
-var health := MAX_HEALTH
 const MAX_BATTERY_SPAWN_TIMER := 7.0
+
+var health := MAX_HEALTH
 var battery_spawn_timer := MAX_BATTERY_SPAWN_TIMER
 
 # Called when the node enters the scene tree for the first time.
