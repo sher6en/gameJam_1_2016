@@ -48,9 +48,9 @@ theme_override_font_sizes/font_size = 400
 text = "GAME OVER"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 74.0
+offset_left = 56.0
 offset_top = 27.0
-offset_right = 3153.9995
+offset_right = 3695.9995
 offset_bottom = 726.99994
 scale = Vector2(0.05, 0.05)
 theme_override_colors/default_color = Color(0.6117647, 0.10980392, 0.10980392, 1)

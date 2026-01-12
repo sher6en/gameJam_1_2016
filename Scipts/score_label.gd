@@ -7,11 +7,11 @@ func _ready() -> void:
 	var score = GlobalState.score
 	
 	if score == 0:
-		text = "well, since its your fist try this was excpected...\ntry again?"
+		text = "ok, that was pretty bad.\ntry again?"
 	elif score == 1:
 		text = "you've saved this alcoholic once. it wasn't enough."
 	else:
-		text = "you've saved this alcoholic " + str(GlobalState.score) + " times. he still managed to die."
+		text = "you've saved this alcoholic " + str(GlobalState.score) + " times. he's still managed to die."
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
