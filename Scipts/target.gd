@@ -58,6 +58,5 @@ func _on_area_entered(area: Area2D) -> void:
 		return
 	
 	# otherwise move the target to a random location on another side 
-
 	randomize_position()
-	#self.set_position(spawn_loc)
+	GlobalState.score += 1
