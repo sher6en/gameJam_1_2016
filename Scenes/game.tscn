@@ -102,7 +102,7 @@ texture = ExtResource("6_i6g32")
 [node name="battery" parent="." instance=ExtResource("9_h4fw4")]
 position = Vector2(93, 99)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="target" type="Sprite2D" parent="."]
 position = Vector2(-29, 32)
 texture = ExtResource("8_h4fw4")
 
