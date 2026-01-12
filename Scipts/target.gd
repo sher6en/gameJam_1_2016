@@ -3,14 +3,14 @@ extends Area2D
 static var p1 := Vector2i(64,32)
 static var p2 := Vector2i(239,143)
 var current_side := randi_range(1, 4)
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize_position()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	print($ort)
+	#self_modulate.a = ($ort.position - position).abs()
 	
 # generates a random integer point on the given side of a rectangle defined by 2 points
 func randomize_position() -> void:
