@@ -7,10 +7,10 @@ var current_path = []
 var current_path_idx = 0
 
 func _physics_process(delta: float) -> void:
-	
 	var target = get_parent().target_instance
-	if current_target_position != Vector2i(target.position+Vector2(1,0)): #A new target was created
-		current_target_position = Vector2i(target.position+Vector2(1,0))
+	
+	if current_target_position != Vector2i(target.position + Vector2.RIGHT): #A new target was created
+		current_target_position = Vector2i(target.position + Vector2.RIGHT)
 		current_path = []
 		current_path_idx = 0
 		
@@ -27,6 +27,8 @@ func _physics_process(delta: float) -> void:
 			drunk_current_path_block.y = clampi(drunk_current_path_block.y, 2, 8)
 			current_path.push_back(16*drunk_current_path_block+Vector2i(8, 0))
 		current_path.push_back(current_target_position+Vector2i(8, 0))
+		
+		print("target pos:", target.position, " curr_taget pos:", current_target_position, "\npath:", current_path)
 	
 	if len(current_path) != 0:
 		

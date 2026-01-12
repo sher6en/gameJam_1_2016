@@ -48,6 +48,7 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	# if ort touches the target it's game over
 	if area.get_parent().name == "ort":
+		print(area.get_parent())
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 		return
 	
