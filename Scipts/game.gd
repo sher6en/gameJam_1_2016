@@ -1,8 +1,6 @@
 extends Node2D
 
 
-static var point_1 := Vector2i(64,32)
-static var point_2 := Vector2i(239,143)
 const MAX_HEALTH := 80.0
 var health := MAX_HEALTH
 const MAX_BATTERY_SPAWN_TIMER := 7.0

@@ -9,8 +9,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print($ort)
-	#self_modulate.a = ($ort.position - position).abs()
+	# set the opacity of the target to be propotional to the distance to ort.
+	# in effect, this makes the target hidden until ort is sufficiently close.
+	# this makes the target position less predictable, and supp has to always be
+	# around ort to guess where it's gonna be, matching closer the theme / story.
+	modulate.a = 3 - (position + Vector2(8, 8)).distance_to($"../ort".position) / 16.0
 	
 # generates a random integer point on the given side of a rectangle defined by 2 points
 func randomize_position() -> void:

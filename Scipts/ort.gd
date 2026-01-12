@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 			current_path.push_back(16*drunk_current_path_block+Vector2i(8, 0))
 		current_path.push_back(current_target_position+Vector2i(8, 0))
 		
-		print("target pos:", target.position, " curr_taget pos:", current_target_position, "\npath:", current_path)
+		#print("target pos:", target.position, " curr_taget pos:", current_target_position, "\npath:", current_path)
 	
 	if len(current_path) != 0:
 		
