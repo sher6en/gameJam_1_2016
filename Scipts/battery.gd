@@ -11,6 +11,4 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent().name == "supp":
 		game.health = game.MAX_HEALTH
 		game.battery_spawn_timer = game.MAX_BATTERY_SPAWN_TIMER
-		print(self)
-		if(get_parent() != null):
-			get_parent().remove_child(self)
+		self.queue_free()
