@@ -2,6 +2,13 @@ extends CharacterBody2D
 
 const SPEED = 80.0
 
+
+func _process(delta: float) -> void:
+	if $"../ort".position.y + 4 > position.y:
+		z_index = 4
+	else:
+		z_index = 8
+
 func _physics_process(delta: float) -> void:
 	
 	var direction_x := Input.get_axis("ui_left", "ui_right")
